@@ -1,0 +1,3206 @@
+@font-face {
+    font-family: "Tritopani";
+    src: url("../Tipografias externas/Tritopani.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: url("../Imagenes/fondop.png") center center / cover no-repeat;
+    color: #123f78;
+    font-family: "Courier Prime", "Courier New", monospace;
+}
+
+a {
+    color: #123f78;
+    text-decoration: none;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 110px;
+    padding: 32px 40px;
+    display: grid;
+    grid-template-columns: 260px 3fr 460px 3fr 6px;
+    align-items: start;
+    column-gap: 50px;
+}
+
+.ubicacion {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    line-height: 1.3;
+    letter-spacing: 1px;
+}
+
+.menu nav {
+    display: flex;
+    gap: 55px;
+    align-items: flex-start;
+}
+
+.menu nav:first-of-type {
+    justify-content: flex-start;
+}
+
+.menu nav:last-of-type {
+    justify-content: flex-end;
+}
+
+.menu nav a {
+    font-size: 13px;
+    letter-spacing: 1px;
+    opacity: 1;
+}
+
+.logo {
+    position: fixed;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+
+    font-family: Georgia, serif;
+    font-size: 50px;
+    line-height: .8;
+    letter-spacing: -5px;
+    color: #123f78;
+    text-align: center;
+}
+.categorias {
+    justify-self: end;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.25;
+    letter-spacing: 1px;
+}
+
+.categorias span {
+    display: block;
+}
+
+.inicio {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    overflow: hidden;
+}
+
+.foto-principal {
+    display: none;
+}
+
+.collage {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.collage .img {
+    position: absolute;
+    display: block;
+    height: auto;
+}
+
+.collage .img1 {
+    width: 100vw;
+    max-width: 380px;
+    left: 20%;
+    top: 25%;
+    transform: rotate(-15deg);
+    z-index: 3;
+}
+
+.collage .img2 {
+    width: 55vw;
+    max-width: 450px;
+    left: 35%;
+    top: 14%;
+    transform: rotate(-7deg);
+    z-index: 3;
+}
+
+.collage .img3 {
+    width: 70vw;
+    max-width: 390px;
+    right: 19%;
+    top: 25%;
+    transform: rotate(5deg);
+    z-index: 3;
+}
+
+.frase {
+    position: absolute;
+    z-index: 20;
+    color: #123f78;
+    font-family: "Tritopani", cursive;
+    font-size: clamp(22px, 2vw, 34px);
+    line-height: .95;
+}
+
+.frase.izquierda {
+    left: 3%;
+    top: 24%;
+    transform: rotate(-8deg);
+}
+
+.frase.derecha {
+    right: 4%;
+    top: 23%;
+    transform: rotate(-7deg);
+}
+
+.frase span {
+    display: block;
+    margin-top: 10px;
+    font-family: "Tritopani", cursive;
+}
+
+.presentacion {
+    position: absolute;
+    z-index: 50;
+    top: 51%;
+    left: 50%;
+    width: min(1000px, 72vw);
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.presentacion h1 {
+    position: relative;
+    height: 110px;
+    margin: 0;
+    font-family: "Tritopani", cursive;
+    font-size: 160px;
+    font-weight: normal;
+    line-height: 0.7;
+    letter-spacing: -3px;
+    color: #123f78;
+}
+
+.titulo-portafolio {
+    display: block;
+    position: relative;
+    transform: rotate(-8deg);
+}
+
+.nombre {
+    margin-top: 10px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 13px;
+    letter-spacing: 5px;
+}
+
+.linea {
+    width: 55px;
+    height: 1px;
+    margin: 24px auto 17px;
+    background-color: #123f78;
+}
+
+.profesion {
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+.disciplinas {
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.entrar {
+    display: inline-block;
+    margin-top: 19px;
+    padding: 6px 42px;
+    border-top: 1px solid #123f78;
+    border-bottom: 1px solid #123f78;
+    background-color: #123f78;
+    color: #f3f0e8;
+    font-size: 12px;
+}
+
+.descripcion {
+    margin-top: 16px;
+    font-size: 9px;
+    line-height: 1.45;
+    letter-spacing: 1px;
+}
+
+.frase.inferior {
+    position: absolute;
+    z-index: 20;
+    right: 4.5%;
+    bottom: 9%;
+    font-family: "Tritopani", cursive;
+    font-size: clamp(20px, 1.7vw, 29px);
+    transform: rotate(-3deg);
+}
+
+.garabato,
+.flor {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+}
+
+.estrella1 {
+    z-index: 5;
+    width: 42px;
+    left: 2%;
+    top: 17%;
+}
+
+.estrella2 {
+    z-index: 5;
+    width: 40px;
+    right: 16%;
+    bottom: 19%;
+}
+
+.boceto1 {
+    z-index: 4;
+    width: 145px;
+    left: 5%;
+    top: 12%;
+    transform: rotate(-6deg);
+}
+
+.boceto3 {
+    z-index: 4;
+    width: 130px;
+    right: 23%;
+    top: 8%;
+    transform: rotate(4deg);
+}
+
+.rayon-derecho {
+    z-index: 4;
+    width: 210px;
+    left: 1%;
+    bottom: 17%;
+    transform: rotate(-12deg);
+}
+
+.rayon-pequeno {
+    z-index: 4;
+    width: 120px;
+    right: 5%;
+    bottom: 20%;
+    transform: rotate(8deg);
+}
+
+.flor-izquierda {
+    position: absolute;
+    z-index: 12;
+    width: 15vw;
+    max-width: 225px;
+    left: 4%;
+    bottom: 7%;
+    transform: rotate(-4deg);
+}
+
+.flor-derecha {
+    position: absolute;
+    z-index: 12;
+    width: 12vw;
+    max-width: 185px;
+    right: 17%;
+    top: 13%;
+    transform: rotate(4deg);
+}
+
+@media (max-width: 1100px) {
+
+    .menu {
+        padding: 18px 20px;
+        grid-template-columns: 110px 1fr auto 1fr 110px;
+        column-gap: 10px;
+    }
+
+    .menu nav {
+        gap: 28px;
+    }
+
+    .menu nav a {
+        font-size: 11px;
+    }
+
+    .logo {
+        font-size: 43px;
+    }
+
+    .ubicacion,
+    .categorias {
+        font-size: 10px;
+    }
+
+    .collage .img1 {
+        width: 50vw;
+        left: 6%;
+    }
+
+    .collage .img2 {
+        width: 50vw;
+        left: 20%;
+    }
+
+    .collage .img3 {
+        width: 50vw;
+        right: 5%;
+    }
+
+    .presentacion {
+        top: 51%;
+    }
+
+    .presentacion h1 {
+        font-size: 72px;
+    }
+
+    .frase {
+        font-size: 22px;
+    }
+
+    .flor-izquierda {
+        width: 150px;
+    }
+
+    .flor-derecha {
+        width: 135px;
+        right: 15%;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .menu {
+        height: 70px;
+        padding: 13px 15px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .ubicacion,
+    .menu nav,
+    .categorias {
+        display: none;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .inicio {
+        min-height: 650px;
+    }
+
+   .collage .img1 {
+    width: 56vw;
+    left: 15%;
+    top: 30%;
+}
+
+.collage .img2 {
+    width: 38vw;
+    left: 7%;
+    top: 17%;
+}
+
+.collage .img3 {
+    width: 38vw;
+    right: 2%;
+    top: 30%;
+}
+
+    .frase {
+        font-size: 16px;
+    }
+
+    .frase.izquierda {
+        left: 3%;
+        top: 28%;
+    }
+
+    .frase.derecha {
+        right: 3%;
+        top: 28%;
+    }
+
+    .presentacion {
+        top: 57%;
+        width: 92vw;
+    }
+
+    .presentacion h1 {
+        height: 100px;
+        font-size: 55px;
+    }
+
+    .nombre {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .linea {
+        margin: 17px auto 12px;
+    }
+
+    .profesion {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .disciplinas {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .entrar {
+        margin-top: 14px;
+        padding: 5px 25px;
+        font-size: 10px;
+    }
+
+    .descripcion {
+        font-size: 7px;
+    }
+
+    .frase.inferior {
+        right: 6%;
+        bottom: 7%;
+        font-size: 15px;
+    }
+
+    .boceto1,
+    .boceto3,
+    .rayon-derecho,
+    .rayon-pequeno,
+    .estrella2 {
+        display: none;
+    }
+
+    .flor-izquierda {
+        width: 90px;
+        left: 1%;
+    }
+
+    .flor-derecha {
+        width: 80px;
+        right: 3%;
+        top: 25%;
+    }
+}
+
+.sobre-mi {
+    position: relative;
+    width: 100%;
+    min-height: 850px;
+    overflow: hidden;
+    background: url("../Imagenes/fondop.png") center center / cover no-repeat;
+    color: #f3f0e8;
+}
+
+.papel-azul {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    min-height: 815px;
+    left: 2%;
+    top: 0;
+    object-fit: fill;
+}
+
+.sobre-contenido {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    min-height: 850px;
+    padding: 70px 9% 70px;
+}
+
+.sobre-titulo {
+    position: absolute;
+    left: 40%;
+    top: 150px;
+    z-index: 8;
+}
+
+.sobre-titulo span {
+    display: block;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    color: #123f78;
+}
+
+.sobre-titulo h2 {
+    margin: 0;
+    font-family: "Tritopani", cursive;
+    font-size: 68px;
+    font-weight: normal;
+    line-height: .8;
+    color: #f3f0e8;
+    transform: rotate(-6deg);
+}
+
+.sobre-foto {
+    position: absolute;
+    z-index: 7;
+    top: 145px;
+    right: 10%;
+    width: 350px;
+    transform: rotate(3deg);
+}
+
+.sobre-foto img {
+    display: block;
+    width: 110%;
+    height: auto;
+}
+
+.sobre-texto {
+    position: absolute;
+    z-index: 6;
+    left: 30%;
+    top: 300px;
+    width: 500px;
+    color: #f3f0e8;
+}
+
+.sobre-texto p {
+    margin: 0 0 27px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.65;
+    letter-spacing: .5px;
+}
+
+.sobre-texto .texto-grande {
+    margin-bottom: 30px;
+    font-family: "Tritopani", cursive;
+    font-size: 27px;
+    line-height: 1.2;
+    letter-spacing: 0;
+    color: #f3f0e8;
+}
+
+.sobre-estudios {
+    position: absolute;
+    z-index: 6;
+    left: 35%;
+    top: 550px;
+    width: 300px;
+    color: #f3f0e8;
+}
+
+.sobre-estudios > span,
+.herramientas > span {
+    display: block;
+    margin-bottom: 17px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.sobre-estudios p {
+    margin: 0;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    letter-spacing: .5px;
+}
+
+.herramientas {
+    position: absolute;
+    z-index: 6;
+    right: 9%;
+    top: 550px;
+    width: 390px;
+    color: #f3f0e8;
+}
+
+.herramientas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px 25px;
+}
+
+.herramienta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+}
+
+.herramienta i {
+    font-size: 20px;
+}
+
+.herramienta p {
+    margin: 0;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 1100px) {
+
+    .sobre-mi {
+        min-height: 780px;
+    }
+
+    .papel-azul {
+        width: 98%;
+        left: 1%;
+        min-height: 760px;
+    }
+
+    .sobre-contenido {
+        min-height: 780px;
+        padding: 60px 7%;
+    }
+
+    .sobre-titulo {
+        left: 7%;
+        top: 55px;
+    }
+
+    .sobre-titulo h2 {
+        font-size: 58px;
+    }
+
+    .sobre-foto {
+        width: 240px;
+        right: 8%;
+        top: 50px;
+    }
+
+    .sobre-texto {
+        left: 8%;
+        top: 270px;
+        width: 430px;
+    }
+
+    .sobre-texto p {
+        font-size: 12px;
+    }
+
+    .sobre-texto .texto-grande {
+        font-size: 24px;
+    }
+
+    .sobre-estudios {
+        left: 48%;
+        top: 600px;
+        width: 250px;
+    }
+
+    .herramientas {
+        right: 7%;
+        top: 600px;
+        width: 320px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .sobre-mi {
+        min-height: 1180px;
+    }
+
+    .papel-azul {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        left: 0;
+        top: 0;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .sobre-contenido {
+        min-height: 1180px;
+        padding: 55px 8% 70px;
+    }
+
+    .sobre-titulo {
+        position: relative;
+        left: auto;
+        top: auto;
+        text-align: center;
+        margin-bottom: 38px;
+    }
+
+    .sobre-titulo span {
+        font-size: 9px;
+        letter-spacing: 3px;
+        margin-bottom: 14px;
+    }
+
+    .sobre-titulo h2 {
+        font-size: 48px;
+    }
+
+    .sobre-foto {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 78%;
+        max-width: 300px;
+        margin: 0 auto 48px;
+        transform: rotate(2deg);
+    }
+
+    .sobre-foto img {
+        width: 100%;
+        height: auto;
+    }
+
+    .sobre-texto {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .sobre-texto .texto-grande {
+        font-size: 22px;
+    }
+
+    .sobre-texto p {
+        font-size: 11px;
+        line-height: 1.5;
+        margin-bottom: 22px;
+    }
+
+    .sobre-estudios {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        margin-top: 42px;
+    }
+
+    .herramientas {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        width: 100%;
+        margin-top: 48px;
+    }
+
+    .herramientas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+}
+.indice-proyectos {
+    position: relative;
+    width: 100%;
+    min-height: 850px;
+    padding: 90px 9% 70px;
+    background: url("../Imagenes/fondop.png") center center / cover no-repeat;
+    color: #123f78;
+    overflow: hidden;
+}
+
+.indice-encabezado {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 65px;
+}
+
+.indice-encabezado span {
+    display: block;
+    margin-bottom: 18px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+.indice-encabezado h2 {
+    margin: 0;
+    font-family: "Tritopani", cursive;
+    font-size: 82px;
+    font-weight: normal;
+    line-height: .8;
+    transform: rotate(-5deg);
+    transform-origin: left center;
+}
+
+.indice-encabezado p {
+    margin-top: 28px;
+    margin-left: 8px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.indice-lista {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.indice-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 90px 1fr 50px;
+    align-items: center;
+    min-height: 125px;
+    padding: 20px 15px;
+    border-top: 1px solid rgba(18, 63, 120, .55);
+    color: #123f78;
+    text-decoration: none;
+    transition: padding .3s ease;
+}
+
+.indice-item:last-child {
+    border-bottom: 1px solid rgba(18, 63, 120, .55);
+}
+
+.indice-item:hover {
+    padding-left: 28px;
+}
+
+.indice-numero {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.indice-info h3 {
+    margin: 0 0 9px;
+    font-family: "Tritopani", cursive;
+    font-size: 47px;
+    font-weight: normal;
+    line-height: .9;
+    transform: rotate(-2deg);
+    transform-origin: left center;
+}
+
+.indice-info p {
+    margin: 0;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: lowercase;
+}
+
+.indice-flecha {
+    justify-self: end;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 24px;
+    transition: transform .3s ease;
+}
+
+.indice-item:hover .indice-flecha {
+    transform: translate(5px, -5px);
+}
+
+.indice-firma {
+    position: absolute;
+    right: 8%;
+    bottom: 55px;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    letter-spacing: -4px;
+    color: #123f78;
+    transform: rotate(-5deg);
+}
+
+@media (max-width: 1100px) {
+
+    .indice-proyectos {
+        min-height: 780px;
+        padding: 75px 7% 60px;
+    }
+
+    .indice-encabezado h2 {
+        font-size: 68px;
+    }
+
+    .indice-lista {
+        max-width: 900px;
+    }
+
+    .indice-item {
+        grid-template-columns: 70px 1fr 40px;
+        min-height: 110px;
+    }
+
+    .indice-info h3 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .indice-proyectos {
+        min-height: 760px;
+        padding: 60px 7% 45px;
+    }
+
+    .indice-encabezado {
+        margin-bottom: 40px;
+    }
+
+    .indice-encabezado span {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .indice-encabezado h2 {
+        font-size: 55px;
+    }
+
+    .indice-encabezado p {
+        font-size: 9px;
+        line-height: 1.5;
+        max-width: 250px;
+    }
+
+    .indice-item {
+        grid-template-columns: 45px 1fr 25px;
+        min-height: 105px;
+        padding: 15px 5px;
+    }
+
+    .indice-numero {
+        font-size: 10px;
+    }
+
+    .indice-info h3 {
+        font-size: 31px;
+    }
+
+    .indice-info p {
+        font-size: 8px;
+        letter-spacing: 1px;
+        line-height: 1.4;
+    }
+
+    .indice-flecha {
+        font-size: 18px;
+    }
+
+    .indice-firma {
+        right: 8%;
+        bottom: 25px;
+        font-size: 30px;
+    }
+}
+.cenefa-principal {
+    position: relative;
+    width: 65%;
+    max-width: 1300px;
+    margin: 35px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cenefa-panel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 1;
+}
+
+.cenefa-texto {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    text-align: center;
+    color: #f3f0e8;
+}
+
+.cenefa-texto .numero {
+    margin: 0 0 8px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 10px;
+    letter-spacing: 6px;
+}
+
+.cenefa-texto h2 {
+    margin: 0;
+    font-family: "Tritopani", cursive;
+    font-size: 150px;
+    font-weight: normal;
+    line-height: 1;
+}
+
+.cenefa-texto p {
+    margin: 10px 0 0;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+@media (max-width: 1100px) {
+
+    .cenefa-principal {
+        width: 92%;
+        margin: 30px auto;
+    }
+
+    .cenefa-panel {
+        width: 100%;
+        height: auto;
+    }
+
+    .cenefa-texto h2 {
+        font-size: 40px;
+    }
+
+    .cenefa-texto .numero {
+        font-size: 9px;
+    }
+
+    .cenefa-texto p {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .cenefa-principal {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    .cenefa-panel {
+        width: 100%;
+        height: auto;
+    }
+
+    .cenefa-texto h2 {
+        font-size: 30px;
+    }
+
+    .cenefa-texto .numero {
+        font-size: 7px;
+        letter-spacing: 4px;
+    }
+
+    .cenefa-texto p {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+}
+.proyecto-rebecca {
+    position: relative;
+    width: 100%;
+    padding: 90px 8% 120px;
+    color: #123f78;
+}
+
+.rebecca-intro {
+    position: relative;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.rebecca-info {
+    width: 42%;
+    position: relative;
+    z-index: 3;
+}
+
+.rebecca-numero {
+    display: block;
+    margin-bottom: 25px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 5px;
+}
+
+.rebecca-info h2 {
+    margin: 0;
+    font-family: "Tritopani", cursive;
+    font-size: clamp(65px, 8vw, 115px);
+    font-weight: normal;
+    line-height: .8;
+}
+
+.rebecca-subtitulo {
+    margin: 28px 0 35px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.rebecca-descripcion {
+    max-width: 430px;
+    margin-bottom: 22px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.rebecca-portada {
+    position: relative;
+    width: 48%;
+    max-width: 560px;
+    z-index: 2;
+
+    left: 0px;
+    right: auto;
+    top: 0px;
+    bottom: auto;
+}
+
+.rebecca-portada img {
+    display: block;
+    width: 120%;
+    height: auto;
+}
+
+.rebecca-muestras {
+    width: 100%;
+    max-width: 1100px;
+    margin: 80px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 55px;
+}
+
+.rebecca-muestra {
+    width: 46%;
+    position: relative;
+}
+
+.rebecca-muestra img {
+    display: block;
+    width: 150%;
+    height: auto;
+}
+
+.rebecca-muestra-1 {
+    position: relative;
+    left: -190px;
+    right: auto;
+    top: -50px;
+    bottom: auto;
+}
+
+.rebecca-muestra-2 {
+    position: relative;
+    left: -35px;
+    right: auto;
+    top: -50px;
+    bottom: auto;
+}
+
+@media (max-width: 1100px) {
+
+    .proyecto-rebecca {
+        padding: 70px 6% 100px;
+    }
+
+    .rebecca-intro {
+        gap: 45px;
+        min-height: 520px;
+    }
+
+    .rebecca-info {
+        width: 45%;
+    }
+
+    .rebecca-portada {
+        width: 50%;
+    }
+
+    .rebecca-descripcion {
+        font-size: 12px;
+    }
+
+    .rebecca-muestras {
+        gap: 35px;
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .proyecto-rebecca {
+        padding: 55px 7% 80px;
+    }
+
+    .rebecca-intro {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 45px;
+    }
+
+    .rebecca-info {
+        width: 100%;
+        text-align: left;
+    }
+
+    .rebecca-numero {
+        font-size: 9px;
+        letter-spacing: 4px;
+        margin-bottom: 20px;
+    }
+
+    .rebecca-info h2 {
+        font-size: 70px;
+    }
+
+    .rebecca-subtitulo {
+        font-size: 9px;
+        letter-spacing: 2px;
+        margin: 22px 0 25px;
+    }
+
+    .rebecca-descripcion {
+        max-width: 100%;
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .rebecca-portada {
+        width: 88%;
+        max-width: 500px;
+
+        left: 0px;
+        right: auto;
+        top: 0px;
+        bottom: auto;
+    }
+
+    .rebecca-muestras {
+        margin-top: 55px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+    }
+
+    .rebecca-muestra {
+        width: 90%;
+    }
+
+    .rebecca-muestra-1 {
+        left: 0px;
+        right: auto;
+        top: 0px;
+        bottom: auto;
+    }
+
+    .rebecca-muestra-2 {
+        left: 0px;
+        right: auto;
+        top: 0px;
+        bottom: auto;
+    }
+}
+.proyecto-auka {
+    position: relative;
+    width: 100%;
+    min-height: 2600px;
+    padding: 100px 7% 150px;
+    overflow: hidden;
+
+}
+
+.auka-encabezado {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.auka-numero {
+    display: block;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
+}
+
+.auka-encabezado h2 {
+    margin: 0;
+    font-family: "Tritopani", cursive;
+    font-size: clamp(75px, 9vw, 125px);
+    font-weight: normal;
+    line-height: .8;
+}
+
+.auka-encabezado p {
+    margin-top: 30px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 5px;
+}
+
+.auka-introduccion {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+
+.auka-texto {
+    width: 35%;
+}
+
+.auka-texto span {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.auka-texto h3 {
+    margin: 20px 0;
+    font-family: "Tritopani", cursive;
+    font-size: 45px;
+    font-weight: normal;
+}
+
+.auka-texto p {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.auka-portada {
+    width: 52%;
+    max-width: 650px;
+}
+
+.auka-portada img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.auka-collage {
+    position: relative;
+    width: 100%;
+    max-width: 1250px;
+    height: 760px;
+    margin: 0 auto 100px;
+}
+
+.auka-img {
+    position: absolute;
+    width: auto;
+    height: auto;
+    display: block;
+    box-shadow: 0 12px 30px rgba(30, 25, 40, .15);
+}
+
+.auka-img-1 {
+    width: 450px;
+    left: 30%;
+    top: 40px;
+    transform: rotate(-3deg);
+    z-index: 2;
+}
+
+.auka-img-2 {
+    width: 430px;
+    left: 30%;
+    top: 350px;
+    transform: rotate(2deg);
+    z-index: 3;
+}
+
+.auka-img-3 {
+    width: 470px;
+    right: 5%;
+    top: 150px;
+    transform: rotate(2deg);
+    z-index: 4;
+}
+
+.auka-img-4 {
+    width: 450px;
+    left: 70%;
+    top: 550px;
+    transform: rotate(-2deg);
+    z-index: 5;
+}
+
+.auka-img-5 {
+    width: 450px;
+    left: 70%;
+    top: 800px;
+    transform: rotate(-2deg);
+    z-index: 2;
+}
+
+.auka-img-6 {
+    width: 480px;
+    left: 70%;
+    top: 800px;
+    transform: rotate(2deg);
+    z-index: 4;
+}
+
+.auka-img-7 {
+    width: 480px;
+    right: 25%;
+    top: 650px;
+    transform: rotate(-3deg);
+    z-index: 3;
+}
+
+.auka-img-8 {
+    width: 300px;
+    left: 4%;
+    right: auto;
+    top: -20px;
+    transform: rotate(-3deg);
+    z-index: 7;
+}
+
+.auka-video {
+    position: absolute;
+    right: 8%;
+    top: 1950px;
+    width: 520px;
+    z-index: 6;
+}
+
+.auka-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.auka-video > span {
+    display: block;
+    margin-bottom: 15px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+.auka-video h3 {
+    margin: 0 0 15px;
+    font-family: "Tritopani", cursive;
+    font-size: 43px;
+    font-weight: normal;
+    line-height: 1;
+}
+
+.auka-video p {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 0 25px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.auka-video video {
+    display: block;
+    width: 330px;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+@media (max-width: 1000px) {
+
+    .auka-introduccion {
+        gap: 40px;
+    }
+
+    .auka-texto {
+        width: 40%;
+    }
+
+    .auka-portada {
+        width: 55%;
+    }
+
+    .auka-collage {
+        height: 650px;
+    }
+
+    .auka-img-1 {
+        width: 310px;
+    }
+
+    .auka-img-2 {
+        width: 340px;
+    }
+
+    .auka-img-3 {
+        width: 370px;
+    }
+
+    .auka-img-4 {
+        width: 290px;
+    }
+
+    .auka-img-5 {
+        width: 280px;
+    }
+
+    .auka-img-6 {
+        width: 320px;
+    }
+
+    .auka-img-7 {
+        width: 300px;
+    }
+
+    .auka-img-8 {
+        width: 120px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .proyecto-auka {
+        padding: 55px 7% 80px;
+    }
+
+    .auka-encabezado {
+        margin-bottom: 50px;
+    }
+
+    .auka-encabezado h2 {
+        font-size: 75px;
+    }
+
+    .auka-encabezado p {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .auka-introduccion {
+        flex-direction: column;
+        gap: 35px;
+        margin-bottom: 60px;
+    }
+
+    .auka-texto {
+        width: 100%;
+    }
+
+    .auka-texto h3 {
+        font-size: 38px;
+    }
+
+    .auka-portada {
+        width: 100%;
+    }
+
+    .auka-collage {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+    }
+
+    .auka-img {
+        position: relative;
+        width: 90%;
+        max-width: 450px;
+        top: auto;
+        left: auto;
+        right: auto;
+        transform: none;
+    }
+
+    .auka-img-8 {
+        width: 55%;
+    }
+
+    .auka-video {
+        margin-top: 80px;
+        padding-top: 60px;
+    }
+
+    .auka-video h3 {
+        font-size: 42px;
+    }
+
+    .auka-video video {
+        width: 100%;
+    }
+}
+ .proyecto-flores {
+    position: relative;
+    width: 100%;
+    margin-top: 20;
+    padding: 70px 7% 130px;
+    color: #123f78;
+    background: transparent;
+    clear: both;
+    overflow: hidden;
+}
+
+    .flores-intro {
+        width: 100%;
+        max-width: 1250px;
+        margin: 0 auto 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 70px;
+    }
+
+    .flores-info {
+        width: 43%;
+    }
+
+    .flores-numero {
+        display: block;
+        margin-bottom: 25px;
+        font-family: "Courier Prime", "Courier New", monospace;
+        font-size: 11px;
+        letter-spacing: 5px;
+    }
+
+    .flores-info h2 {
+        margin: 0;
+        font-family: "Tritopani", cursive;
+        font-size: clamp(65px, 8vw, 110px);
+        font-weight: normal;
+        line-height: .8;
+    }
+
+    .flores-subtitulo {
+        margin: 30px 0;
+        font-family: "Courier Prime", "Courier New", monospace;
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+
+    .flores-descripcion {
+        max-width: 430px;
+        margin: 0;
+        font-family: "Courier Prime", "Courier New", monospace;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .flores-portada {
+        width: 48%;
+        max-width: 600px;
+    }
+
+    .flores-portada img {
+        display: block;
+        width: 110%;
+        height: auto;
+    }
+
+    .flores-galeria {
+        width: 100%;
+        max-width: 1200px;
+        min-height: 650px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .flores-imagen {
+        position: absolute;
+    }
+
+    .flores-imagen img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .flores-2 {
+        width: 55%;
+        left: 2%;
+        top: 20px;
+        transform: rotate(-2deg);
+        z-index: 2;
+    }
+
+    .flores-3 {
+        width: 55%;
+        left: 5%;
+        top: 320px;
+        transform: rotate(2deg);
+        z-index: 3;
+    }
+
+    .flores-celular-1 {
+        width: 19%;
+        right: 7%;
+        top: 20px;
+        transform: rotate(3deg);
+        z-index: 4;
+    }
+
+    .flores-celular-2 {
+        width: 17%;
+        right: 1%;
+        top: 290px;
+        transform: rotate(-3deg);
+        z-index: 5;
+    }
+
+    @media (max-width: 1100px) {
+
+        .proyecto-flores {
+            padding: 250px 6% 110px;
+        }
+
+        .flores-intro {
+            gap: 45px;
+        }
+
+        .flores-info {
+            width: 45%;
+        }
+
+        .flores-portada {
+            width: 50%;
+        }
+
+        .flores-descripcion {
+            font-size: 12px;
+        }
+
+        .flores-galeria {
+            min-height: 600px;
+        }
+    }
+
+    @media (max-width: 700px) {
+
+        .auka-video {
+            margin-top: 60px;
+            padding-top: 40px;
+        }
+
+        .auka-video h3 {
+            font-size: 35px;
+        }
+
+        .auka-video video {
+            width: 100%;
+        }
+
+        .proyecto-flores {
+            padding: 180px 7% 90px;
+        }
+
+        .flores-intro {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 45px;
+            margin-bottom: 60px;
+        }
+
+        .flores-info {
+            width: 100%;
+        }
+
+        .flores-numero {
+            font-size: 9px;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .flores-info h2 {
+            font-size: 70px;
+        }
+
+        .flores-subtitulo {
+            font-size: 9px;
+            letter-spacing: 2px;
+            margin: 22px 0 25px;
+        }
+
+        .flores-descripcion {
+            max-width: 100%;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        .flores-portada {
+            width: 100%;
+            max-width: 500px;
+            align-self: center;
+        }
+
+        .flores-galeria {
+            min-height: 900px;
+        }
+
+        .flores-2 {
+            width: 85%;
+            left: 0;
+            top: 0;
+        }
+
+        .flores-3 {
+            width: 85%;
+            left: 12%;
+            top: 230px;
+        }
+
+        .flores-celular-1 {
+            width: 42%;
+            right: 0;
+            top: 480px;
+        }
+
+        .flores-celular-2 {
+            width: 35%;
+            right: 3%;
+            top: 680px;
+        }
+    }
+.branding-cenefa {
+    width: 100%;
+    position: relative;
+}
+
+.branding-cenefa .cenefa-principal {
+    position: relative;
+    width: 65%;
+    max-width: 1300px;
+    margin: 35px auto 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.branding-cenefa .cenefa-panel {
+    position: relative;
+    width: 200%;
+    height: auto;
+    display: block;
+    z-index: 1;
+}
+
+.branding-cenefa .cenefa-texto {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    text-align: center;
+    color: #f3f0e8;
+}
+
+.branding-cenefa .cenefa-texto span {
+    display: block;
+    margin-bottom: 25px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 6px;
+}
+
+.branding-cenefa .cenefa-texto h2 {
+    margin: 0;
+    font-family: "Tritopani", cursive;
+    font-size: clamp(65px, 8vw, 115px);
+    font-weight: normal;
+    line-height: .8;
+}
+
+.branding-cenefa .cenefa-texto p {
+    margin-top: 30px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 5px;
+}
+
+.branding-auka {
+    width: 100%;
+    position: relative;
+    padding: 40px 8% 120px;
+    color: #123f78;
+}
+
+.branding-auka-intro {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.branding-auka-texto {
+    width: 50%;
+}
+
+.branding-numero {
+    display: block;
+    margin-bottom: 25px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 5px;
+}
+
+.branding-auka-texto h2 {
+    margin: 0;
+    font-family: "Tritopani", cursive;
+    font-size: clamp(55px, 7vw, 100px);
+    font-weight: normal;
+    line-height: .85;
+}
+
+.branding-auka-texto p {
+    max-width: 450px;
+    margin-top: 30px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.branding-logo-auka {
+    width: 35%;
+    max-width: 350px;
+    height: auto;
+}
+
+.branding-auka-imagenes {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+}
+
+.branding-auka-imagenes img {
+    width: 24%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 700px) {
+
+    .branding-cenefa .cenefa-principal {
+        width: 90%;
+        margin-bottom: 60px;
+    }
+
+    .branding-cenefa .cenefa-texto h2 {
+        font-size: 60px;
+    }
+
+    .branding-auka {
+        padding: 30px 7% 80px;
+    }
+
+    .branding-auka-intro {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .branding-auka-texto {
+        width: 100%;
+    }
+
+    .branding-logo-auka {
+        width: 55%;
+        align-self: center;
+    }
+
+    .branding-auka-imagenes {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .branding-auka-imagenes img {
+        width: 85%;
+    }
+
+}
+.cenefa-multimedia {
+    width: 100%;
+    position: relative;
+}
+
+.cenefa-multimedia .cenefa-principal {
+    position: relative;
+    width: 75%;
+    max-width: 1450px;
+    margin: 35px auto 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cenefa-multimedia .cenefa-panel {
+    position: relative;
+    width: 180%;
+    height: auto;
+    display: block;
+    z-index: 1;
+}
+
+.cenefa-multimedia .cenefa-texto {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    text-align: center;
+    color: #f3f0e8;
+}
+
+.cenefa-multimedia .cenefa-texto h2 {
+    margin: 0;
+    font-family: "Tritopani", cursive;
+    font-size: clamp(65px, 8vw, 115px);
+    font-weight: normal;
+    line-height: .8;
+}
+
+@media (max-width: 700px) {
+
+    .cenefa-multimedia .cenefa-principal {
+        width: 90%;
+        margin-bottom: 60px;
+    }
+
+    .cenefa-multimedia .cenefa-texto h2 {
+        font-size: 60px;
+    }
+}
+.auka-branding-presentacion {
+    width: 100%;
+    max-width: 1250px;
+    margin: 100px auto 140px;
+    padding: 0 7%;
+    box-sizing: border-box;
+}
+
+.auka-branding-texto {
+    max-width: 850px;
+    margin-bottom: 60px;
+}
+
+.auka-branding-numero {
+    display: block;
+    margin-bottom: 25px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: #123f78;
+}
+
+.auka-branding-texto h2 {
+    margin: 0 0 30px;
+    font-family: "Tritopani", cursive;
+    font-size: clamp(55px, 7vw, 100px);
+    font-weight: normal;
+    line-height: .9;
+    color: #123f78;
+}
+
+.auka-branding-texto p {
+    max-width: 720px;
+    margin: 0 0 18px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #123f78;
+}
+
+.auka-branding-video {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.auka-branding-video video {
+    display: block;
+    width: 65%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 4px;
+}
+.multimedia-contenido {
+    width: 100%;
+    padding: 100px 8% 140px;
+    color: #123f78;
+}
+
+.multimedia-intro {
+    max-width: 1050px;
+    margin: 0 auto 130px;
+}
+
+.multimedia-numero {
+    display: block;
+    margin-bottom: 30px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 5px;
+}
+
+.multimedia-intro h2 {
+    margin: 0;
+    font-family: "Tritopani", cursive;
+    font-size: clamp(60px, 8vw, 115px);
+    font-weight: normal;
+    line-height: .85;
+}
+
+.multimedia-intro p {
+    max-width: 600px;
+    margin-top: 40px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.multimedia-proyecto {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.multimedia-video {
+    width: 58%;
+}
+
+.multimedia-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.multimedia-info {
+    width: 38%;
+}
+
+.multimedia-info span {
+    display: block;
+    margin-bottom: 25px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.multimedia-info h3 {
+    margin: 0;
+    font-family: "Tritopani", cursive;
+    font-size: clamp(45px, 5vw, 75px);
+    font-weight: normal;
+    line-height: .9;
+}
+
+.multimedia-info p {
+    margin-top: 30px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.multimedia-proyecto-2 {
+    flex-direction: row;
+}
+
+.cierre-portafolio {
+    width: 100%;
+    padding: 120px 8% 50px;
+    color: #123f78;
+}
+
+.cierre-texto {
+    max-width: 1000px;
+    margin: 0 auto 100px;
+    text-align: center;
+}
+
+.cierre-texto span {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 10px;
+    letter-spacing: 5px;
+}
+
+.cierre-texto h2 {
+    margin: 30px 0 0;
+    font-family: "Tritopani", cursive;
+    font-size: clamp(55px, 7vw, 100px);
+    font-weight: normal;
+    line-height: .9;
+}
+
+.cierre-texto p {
+    max-width: 550px;
+    margin: 35px auto 0;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.cierre-redes {
+    max-width: 900px;
+    margin: 0 auto 120px;
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    text-align: center;
+}
+
+.cierre-redes a {
+    color: #123f78;
+    text-decoration: none;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.cierre-redes span {
+    display: inline-block;
+    margin-top: 10px;
+    font-family: "Tritopani", cursive;
+    font-size: 35px;
+    letter-spacing: 0;
+}
+
+.cierre-herramientas {
+    max-width: 1000px;
+    margin: 0 auto 120px;
+    text-align: center;
+}
+
+.cierre-herramientas > span {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 10px;
+    letter-spacing: 5px;
+}
+
+.herramientas-lista {
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 35px;
+}
+
+.herramientas-lista span {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 12px;
+}
+
+.cierre-contacto {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.contacto-info {
+    width: 35%;
+}
+
+.contacto-info > span {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.contacto-info h3 {
+    margin: 25px 0 20px;
+    font-family: "Tritopani", cursive;
+    font-size: 70px;
+    font-weight: normal;
+}
+
+.contacto-info p {
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 12px;
+}
+
+.contacto-info a {
+    color: #123f78;
+    text-decoration: none;
+}
+
+.formulario-contacto {
+    width: 55%;
+}
+
+.campo-formulario {
+    margin-bottom: 25px;
+}
+
+.campo-formulario label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.campo-formulario input,
+.campo-formulario textarea {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #123f78;
+    background: transparent;
+    outline: none;
+    resize: vertical;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 12px;
+    color: #123f78;
+    box-sizing: border-box;
+}
+
+.campo-formulario input::placeholder,
+.campo-formulario textarea::placeholder {
+    color: #123f78;
+    opacity: .55;
+}
+
+.formulario-contacto button {
+    margin-top: 15px;
+    padding: 13px 30px;
+    border: 1px solid #123f78;
+    background: transparent;
+    color: #123f78;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+.cierre-final {
+    max-width: 1100px;
+    margin: 100px auto 0;
+    padding-top: 25px;
+    border-top: 1px solid #123f78;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Courier Prime", "Courier New", monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 700px) {
+
+    .multimedia-contenido {
+        padding: 70px 7% 90px;
+    }
+
+    .multimedia-intro {
+        margin-bottom: 80px;
+    }
+
+    .multimedia-intro h2 {
+        font-size: 65px;
+    }
+
+    .multimedia-intro p {
+        font-size: 11px;
+    }
+
+    .multimedia-proyecto,
+    .multimedia-proyecto-2 {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 100px;
+    }
+
+    .multimedia-video,
+    .multimedia-info {
+        width: 100%;
+    }
+
+    .multimedia-info h3 {
+        font-size: 55px;
+    }
+
+    .cierre-portafolio {
+        padding: 80px 7% 40px;
+    }
+
+    .cierre-texto h2 {
+        font-size: 60px;
+    }
+
+    .cierre-redes {
+        gap: 45px;
+        margin-bottom: 80px;
+    }
+
+    .cierre-redes span {
+        font-size: 28px;
+    }
+
+    .cierre-contacto {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .contacto-info,
+    .formulario-contacto {
+        width: 100%;
+    }
+
+    .contacto-info h3 {
+        font-size: 60px;
+    }
+
+    .cierre-final {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+.menu-hamburguesa,
+.menu-movil {
+    display: none;
+}
+
+@media (max-width: 700px) {
+
+    .menu {
+        position: absolute;
+        height: 70px;
+        padding: 0;
+        display: block;
+    }
+
+    .logo {
+        position: absolute;
+        top: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 34px;
+        letter-spacing: -4px;
+        z-index: 1100;
+    }
+
+    .menu-hamburguesa {
+        display: flex;
+        position: fixed;
+        top: 13px;
+        right: 14px;
+        z-index: 1200;
+        width: 42px;
+        height: 42px;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: #123f78;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    .menu-movil {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        right: 0;
+        width: min(78vw, 310px);
+        height: 100vh;
+        padding: 90px 30px 35px;
+        gap: 26px;
+        z-index: 1150;
+        background: #f3f0e8;
+        box-shadow: -8px 0 30px rgba(18, 63, 120, .12);
+        transform: translateX(105%);
+        transition: transform .3s ease;
+    }
+
+    .menu-movil.abierto {
+        transform: translateX(0);
+    }
+
+    .menu-movil a {
+        color: #123f78;
+        font-family: "Courier Prime", "Courier New", monospace;
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-transform: lowercase;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(18, 63, 120, .25);
+    }
+
+    .inicio {
+        height: 760px;
+        min-height: 760px;
+        overflow: hidden;
+    }
+
+    .collage {
+        position: absolute;
+        inset: 0;
+        height: 470px;
+        overflow: visible;
+    }
+
+    .collage .img {
+        position: absolute;
+        height: auto;
+        max-width: none;
+        object-fit: contain;
+    }
+
+    .collage .img2 {
+        width: 49vw;
+        max-width: 205px;
+        left: 8vw;
+        top: 150px;
+        transform: rotate(-5deg);
+    }
+
+    .collage .img1 {
+        width: 54vw;
+        max-width: 225px;
+        left: 3vw;
+        top: 265px;
+        transform: rotate(-8deg);
+    }
+
+    .collage .img3 {
+        width: 46vw;
+        max-width: 195px;
+        right: 5vw;
+        top: 275px;
+        transform: rotate(4deg);
+    }
+
+    .frase.izquierda {
+        left: 3vw;
+        top: 255px;
+        font-size: 11px;
+    }
+
+    .frase.derecha {
+        right: 1vw;
+        top: 255px;
+        font-size: 11px;
+    }
+
+    .presentacion {
+        top: 500px;
+        width: 88vw;
+    }
+
+    .presentacion h1 {
+        height: 75px;
+        font-size: 53px;
+        line-height: .72;
+    }
+
+    .nombre {
+        margin-top: 8px;
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .linea {
+        margin: 15px auto 12px;
+    }
+
+    .profesion {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .disciplinas {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .entrar {
+        margin-top: 14px;
+        padding: 6px 30px;
+        font-size: 9px;
+    }
+
+    .descripcion {
+        margin-top: 14px;
+        font-size: 7px;
+        line-height: 1.5;
+    }
+
+    .sobre-mi {
+        min-height: 1050px;
+    }
+
+    .papel-azul {
+        width: 115%;
+        height: 100%;
+        min-height: 0;
+        left: -7.5%;
+        top: 0;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .proyecto-auka {
+        width: 100%;
+        min-height: 0;
+        padding: 55px 7% 90px;
+        overflow: hidden;
+    }
+
+    .auka-introduccion {
+        display: flex;
+        flex-direction: column;
+        gap: 38px;
+        width: 100%;
+    }
+
+    .auka-texto,
+    .auka-portada {
+        width: 100%;
+    }
+
+    .auka-portada img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .auka-collage {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin-top: 45px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+    }
+
+    .auka-collage .auka-img,
+    .auka-collage .auka-img-1,
+    .auka-collage .auka-img-2,
+    .auka-collage .auka-img-3,
+    .auka-collage .auka-img-4,
+    .auka-collage .auka-img-5,
+    .auka-collage .auka-img-6,
+    .auka-collage .auka-img-7,
+    .auka-collage .auka-img-8 {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        transform: none;
+        display: block;
+        width: 100%;
+        max-width: 430px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .auka-collage .auka-img-8 {
+        width: 58%;
+        max-width: 250px;
+    }
+
+    .auka-video {
+        width: 100%;
+        margin-top: 60px;
+        padding-top: 20px;
+    }
+
+    .auka-video video {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .branding-cenefa .cenefa-principal,
+    .cenefa-multimedia .cenefa-principal {
+        width: 92%;
+        height: auto;
+        margin: 30px auto 55px;
+    }
+
+    .branding-cenefa .cenefa-panel,
+    .cenefa-multimedia .cenefa-panel {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .branding-cenefa .cenefa-texto,
+    .cenefa-multimedia .cenefa-texto {
+        width: 85%;
+    }
+
+    .branding-cenefa .cenefa-texto h2,
+    .cenefa-multimedia .cenefa-texto h2 {
+        font-size: clamp(38px, 12vw, 58px);
+    }
+
+    .branding-auka {
+        width: 100%;
+        padding: 25px 7% 80px;
+        overflow: hidden;
+    }
+
+    .branding-auka-intro {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        width: 100%;
+    }
+
+    .branding-auka-texto {
+        width: 100%;
+    }
+
+    .branding-logo-auka {
+        display: block;
+        width: 65%;
+        max-width: 250px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .branding-auka-imagenes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        width: 100%;
+        margin-top: 35px;
+    }
+
+    .branding-auka-imagenes img {
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .auka-branding-presentacion {
+        width: 100%;
+        margin: 65px auto 85px;
+        padding: 0 7%;
+    }
+
+    .auka-branding-texto {
+        max-width: 100%;
+    }
+
+    .auka-branding-video {
+        width: 100%;
+        margin-top: 35px;
+    }
+
+    .auka-branding-video video {
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 700px) {
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 98%;
+        height: 0px;
+        z-index: 1000;
+        pointer-events: none;
+    }
+
+    .logo {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001;
+        font-size: 34px;
+        letter-spacing: -4px;
+        pointer-events: auto;
+    }
+
+    .menu-hamburguesa {
+        display: flex;
+        position: fixed;
+        top: 10px;
+        right: 14px;
+        z-index: 1200;
+        width: 42px;
+        height: 42px;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        background: transparent;
+        color: #123f78;
+        font-size: 25px;
+        pointer-events: auto;
+    }
+
+    .inicio {
+        height: 820px;
+        min-height: 820px;
+        overflow: hidden;
+    }
+
+    .collage {
+        inset: 0;
+        height: 410px;
+        overflow: visible;
+    }
+
+    .collage .img {
+        height: auto;
+        max-width: none;
+        object-fit: contain;
+    }
+
+    .collage .img2 {
+        width: 42vw;
+        max-width: 185px;
+        left: 7vw;
+        top: 125px;
+        transform: rotate(-5deg);
+    }
+
+    .collage .img3 {
+        width: 39vw;
+        max-width: 175px;
+        right: 7vw;
+        top: 145px;
+        transform: rotate(4deg);
+    }
+
+    .collage .img1 {
+        width: 47vw;
+        max-width: 205px;
+        left: 27vw;
+        top: 245px;
+        transform: rotate(-7deg);
+    }
+
+    .frase.izquierda {
+        left: 3vw;
+        top: 255px;
+        font-size: 9px;
+        color: #123f78;
+        line-height: 1;
+    }
+
+    .frase.derecha {
+        right: 2vw;
+        top: 245px;
+        font-size: 9px;
+        color: #123f78;
+        line-height: 1;
+    }
+
+    .presentacion {
+        top: 470px;
+        width: 86vw;
+    }
+
+    .presentacion h1 {
+        height: 68px;
+        font-size: 52px;
+        line-height: .72;
+    }
+
+    .nombre {
+        margin-top: 10px;
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .linea {
+        margin: 14px auto 12px;
+    }
+
+    .profesion {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .disciplinas {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .entrar {
+        margin-top: 14px;
+        padding: 7px 30px;
+        font-size: 9px;
+    }
+
+    .descripcion {
+        margin-top: 14px;
+        font-size: 7px;
+        line-height: 1.5;
+    }
+
+    .sobre-mi {
+        min-height: 1050px;
+    }
+
+    .papel-azul {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        left: 0;
+        top: 0;
+        object-fit: contain;
+        object-position: top center;
+    }
+
+    .proyecto-auka {
+        width: 100%;
+        min-height: 0;
+        padding: 55px 7% 90px;
+        overflow: hidden;
+    }
+
+    .auka-introduccion {
+        display: flex;
+        flex-direction: column;
+        gap: 38px;
+        width: 100%;
+    }
+
+    .auka-texto,
+    .auka-portada {
+        width: 100%;
+    }
+
+    .auka-portada img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .auka-collage {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin-top: 45px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+    }
+
+    .auka-collage .auka-img,
+    .auka-collage .auka-img-1,
+    .auka-collage .auka-img-2,
+    .auka-collage .auka-img-3,
+    .auka-collage .auka-img-4,
+    .auka-collage .auka-img-5,
+    .auka-collage .auka-img-6,
+    .auka-collage .auka-img-7,
+    .auka-collage .auka-img-8 {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        transform: none;
+        display: block;
+        width: 100%;
+        max-width: 430px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .auka-collage .auka-img-8 {
+        width: 58%;
+        max-width: 250px;
+    }
+
+    .auka-video {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        margin: 60px auto 0;
+        padding-top: 20px;
+    }
+
+    .auka-video video {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .branding-cenefa .cenefa-principal,
+    .cenefa-multimedia .cenefa-principal {
+        width: 92%;
+        height: auto;
+        margin: 30px auto 55px;
+    }
+
+    .branding-cenefa .cenefa-panel,
+    .cenefa-multimedia .cenefa-panel {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .branding-cenefa .cenefa-texto,
+    .cenefa-multimedia .cenefa-texto {
+        width: 85%;
+    }
+
+    .branding-cenefa .cenefa-texto h2,
+    .cenefa-multimedia .cenefa-texto h2 {
+        font-size: clamp(38px, 12vw, 58px);
+    }
+}
+@media (max-width: 700px) {
+
+    .collage .img1 {
+        width: 70vw !important;
+        left: 27% !important;
+        top: 65% !important;
+    }
+
+    .collage .img2 {
+        width: 100vw !important;
+        left: 8% !important;
+        top: 85% !important;
+    }
+
+    .collage .img3 {
+        width: 100vw !important;
+        right: 8% !important;
+        top: 85% !important;
+    }
+
+}
+@media (max-width: 700px) {
+
+    .sobre-mi p,
+    .sobre-mi h2,
+    .sobre-mi h3,
+    .sobre-mi span,
+    .actualmente,
+    .lo-que-hago,
+    .lo-que-hago .bi {
+        color: #123f78 !important;
+    }
+
+}
+.herramienta .bi,
+.herramienta p {
+    color: #123f78 !important;
+}
+.rebecca-portada {
+    width: 100%;
+    margin: 0 auto 35px;
+}
+
+.rebecca-portada img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.rebecca-muestras {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.rebecca-muestra-1,
+.rebecca-muestra-2 {
+    position: relative;
+    width: 85%;
+    max-width: 360px;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    transform: none;
+}
+
+.rebecca-muestra-1 img,
+.rebecca-muestra-2 img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
